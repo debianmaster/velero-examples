@@ -24,7 +24,7 @@ metadata:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: nginx-logs
+  name: nginx-html
   namespace: nginx-example
   labels:
     app: nginx
@@ -58,9 +58,9 @@ spec:
         post.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--unfreeze", "/usr/share/nginx/html"]'
     spec:
       volumes:
-        - name: nginx-logs
+        - name: nginx-html
           persistentVolumeClaim:
-           claimName: nginx-logs
+           claimName: nginx-html
       containers:
       - image: nginx:1.7.9
         name: nginx
