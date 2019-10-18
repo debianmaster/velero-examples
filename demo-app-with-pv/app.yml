@@ -67,16 +67,16 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-          - mountPath: "/var/log/nginx"
-            name: nginx-logs
+          - mountPath: "/usr/share/nginx/html"
+            name: nginx-html
             readOnly: false
       - image: gcr.io/heptio-images/fsfreeze-pause:latest
         name: fsfreeze
         securityContext:
           privileged: true
         volumeMounts:
-          - mountPath: "/var/log/nginx"
-            name: nginx-logs
+          - mountPath: "/usr/share/nginx/html"
+            name: nginx-html
             readOnly: false
 
 ---
