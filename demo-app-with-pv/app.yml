@@ -25,7 +25,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: nginx-html
-  namespace: nginx-example
+  namespace: demo
   labels:
     app: nginx
 spec:
